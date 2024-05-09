@@ -9,6 +9,7 @@ class Table(TableParentClass):
         self._head_wrap = self.create.node.group()
         self._head = None
         self._body = None
+        self.attributes.classes.set('table')
 
     @property
     def head(self) -> Thead:

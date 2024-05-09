@@ -1,19 +1,19 @@
 from hebill_html import Document
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-html = Document()
-print(html.output())
-
+doc = Document()
+table = doc.html.body.middle.create.component.table()
 
 # 定义一个处理HTTP请求的处理程序
 class MyHandler(BaseHTTPRequestHandler):
     # 处理GET请求
+    # noinspection PyPep8Naming
     def do_GET(self):
         self.send_response(200)  # 发送HTTP响应码200，表示成功
         self.send_header('Content-type', 'text/html')  # 发送响应头，指定内容类型为HTML
         self.end_headers()  # 结束响应头的发送
         # 发送响应内容
-        self.wfile.write(html.output().encode('utf-8'))
+        self.wfile.write(doc.output().encode('utf-8'))
 
 
 # 主函数，用于启动服务器
