@@ -10,6 +10,7 @@ class Html(HtmlParentClass):
         self._body = Body(self)
         self._library_files = []
         self.title = title
+        self.add_meta().set_attribute_charset('utf-8')
         css = self.add_head_css_link('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css')
         css.attributes.add('rel', 'stylesheet')
         css.attributes.add('integrity', 'sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH')

@@ -3,6 +3,13 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 doc = Document()
 table = doc.html.body.middle.create.component.table()
+row = table.head.add_row()
+row.add_cell('ID')
+row.add_cell('名称')
+
+row = table.body.add_row()
+row.add_cell('1')
+row.add_cell('张三')
 
 
 # 定义一个处理HTTP请求的处理程序
