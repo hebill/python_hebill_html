@@ -8,6 +8,7 @@ class Tag(Group):
         from .attributes.core import Attributes
         self._attributes = Attributes()
         self.output_breakable = True
+        self.output_paired = True
 
     @property
     def tag(self): return self._tag
@@ -25,6 +26,8 @@ class Tag(Group):
         s += "<" + self.tag
         s += self.attributes.output()
         s += ">"
+        if not self.output_paired:
+            return s
         self.document.output_next_breakable = True
         si = super().output()
         s += si

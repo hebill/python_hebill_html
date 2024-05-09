@@ -11,6 +11,7 @@ from .head.core import Head
 from .html.core import Html
 from .input_text.core import InputText
 from .link.core import Link
+from .meta.core import Meta
 from .script.core import Script
 from .span.core import Span
 from .table.core import Table

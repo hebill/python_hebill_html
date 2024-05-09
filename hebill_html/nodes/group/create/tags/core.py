@@ -54,6 +54,10 @@ class Tags:
         from .....tags import Link
         return Link(self.senior, url)
 
+    def meta(self, url: str = None):
+        from .....tags import Meta
+        return Meta(self.senior)
+
     def script(self, url: str = None):
         from .....tags import Script
         return Script(self.senior, url)

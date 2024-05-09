@@ -1,18 +1,15 @@
-from ....components.html.core import Html
 
 
 class Libraries:
-    def __init__(self, htm: Html):
-        self._htm = htm
+    def __init__(self, htm):
+        from ....components.html.core import Html
+        self._htm: Html = htm
         self._files = []
 
-    def add_js_file(self, url):
+    def add_js_link(self, url):
         if url not in self._files:
             self._files.append(url)
         pass
 
-    def add_css_file(self, url):
-        pass
-
-    def use_hebill(self):
+    def add_css_link(self, url):
         pass
