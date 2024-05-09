@@ -4,6 +4,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 doc = Document()
 table = doc.html.body.middle.create.component.table()
 
+
 # 定义一个处理HTTP请求的处理程序
 class MyHandler(BaseHTTPRequestHandler):
     # 处理GET请求
