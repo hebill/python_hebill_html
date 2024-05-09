@@ -13,3 +13,7 @@ class Libraries:
 
     def add_css_link(self, url):
         pass
+
+    def add_meta(self):
+        pass
+
