@@ -2,8 +2,7 @@ from ...nodes import Tag
 
 
 class Td(Tag):
-    def __init__(self, senior, text: str = None):
+    def __init__(self, senior, text=None):
         super().__init__(senior, 'td')
-        if text is not None:
-            self.create.node.content(text)
+        self.add_junior(text)
         

@@ -3,6 +3,16 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 doc = Document()
 table = doc.html.body.middle.create.component.table()
+table.color.set_success()
+table.set_bordered()
+table.set_hover()
+
+table.head.add_row(['ID', '姓名', '年龄', '职位'])
+
+table.body.add_row(['1', '张三', '18', '总监']).set_active()
+table.body.add_row(['2', '李四', '18', '总监'])
+table.body.add_row(['3', '王二', '18', '总监'])
+table.body.add_row(['4', '麻一', '18', '总监'])
 
 
 # 定义一个处理HTTP请求的处理程序
@@ -31,8 +41,10 @@ def main():
         server.serve_forever()
     except KeyboardInterrupt:
         # 捕获键盘中断信号（Ctrl+C），停止服务器
-        print("\nServer stopped.")
+        print("\n Server stopped.")
         server.shutdown()
+    except ConnectionAbortedError as e:
+        print("\n Client interrupted.")
 
 
 if __name__ == "__main__":

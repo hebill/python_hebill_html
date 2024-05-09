@@ -2,7 +2,6 @@ from ...nodes import Tag
 
 
 class H6(Tag):
-    def __init__(self, senior, text: str = None):
+    def __init__(self, senior, text=None):
         super().__init__(senior, 'h6')
-        if text is not None:
-            self.create.node.content(text)
+        self.add_junior(text)

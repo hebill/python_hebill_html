@@ -8,6 +8,8 @@ class Tr(TrParentClass):
         self._cells = []
         self._cell = None
 
+        self._style = None
+
     @property
     def cells(self) -> list:
         return self._cells
@@ -18,7 +20,17 @@ class Tr(TrParentClass):
             self.add_cell()
         return self._cell
 
-    def add_cell(self, text: str = None) -> Td:
+    def add_cell(self, text=None) -> Td:
         self._cell = Td(self, text)
         self._cells.append(self._cell)
         return self._cell
+
+    @property
+    def color(self):
+        if self._style is None:
+            from ...color import Color
+            self._style = Color(self)
+        return self._style
+
+    def set_active(self):
+        self.attributes.classes.append('table-active')

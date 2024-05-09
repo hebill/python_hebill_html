@@ -6,8 +6,7 @@ class Title(Tag):
         super().__init__(senior, 'title')
         self.output_break_inner = False
         self._content = self.create.node.content()
-        if text is not None:
-            self._content.text = text
+        self.add_junior(text)
 
     @property
     def content(self):

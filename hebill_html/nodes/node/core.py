@@ -23,6 +23,10 @@ class Node:
     @property
     def senior(self): return self._senior
 
+    def local_change_senior(self, sir):
+        self.senior.local_remove_junior(self)
+        self._senior = sir
+
     @property
     def level(self) -> int:
         if self._senior is None:

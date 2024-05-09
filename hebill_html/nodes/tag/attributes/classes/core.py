@@ -6,13 +6,30 @@ class Classes(list):
         return self.set(classes)
 
     def set(self, classes: str | list = None) -> bool:
-        if classes is None:
-            return False
         if isinstance(classes, str):
-            self.extend(classes.split(' '))
+            if ' ' in classes:
+                self.set(classes.split(' '))
+            else:
+                if classes not in self:
+                    self.append(classes)
             return True
         elif isinstance(classes, list):
-            self.extend(classes)
+            for c in classes:
+                self.set(c)
+            return True
+        return False
+
+    def unset(self, classes: str | list = None) -> bool:
+        if isinstance(classes, str):
+            if ' ' in classes:
+                self.unset(classes.split(' '))
+            else:
+                if classes in self:
+                    self.remove(classes)
+            return True
+        elif isinstance(classes, list):
+            for c in classes:
+                self.unset(c)
             return True
         return False
 
