@@ -11,4 +11,8 @@ class Title(Tag):
 
     @property
     def content(self):
-        return self._content
+        return self._content.text
+
+    @content.setter
+    def content(self, content):
+        self._content.text = content

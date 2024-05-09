@@ -54,7 +54,7 @@ class Tags:
         from .....tags import Link
         return Link(self.senior, url)
 
-    def meta(self, url: str = None):
+    def meta(self):
         from .....tags import Meta
         return Meta(self.senior)
 

@@ -6,8 +6,8 @@ class Head(HeadParentClass):
     def __init__(self, senior):
         super().__init__(senior)
         self._metas = self.create.node.group()
+        self._title = self.create.tag.title()
         self._libraries = self.create.node.group()
-        self._title = Title(self)
 
     @property
     def metas(self):
@@ -19,4 +19,9 @@ class Head(HeadParentClass):
 
     @property
     def title(self):
-        return self._title
+        return self._title.content
+
+    @title.setter
+    def title(self, title):
+        self._title.content = title
+

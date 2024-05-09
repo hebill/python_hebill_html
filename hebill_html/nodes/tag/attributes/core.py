@@ -20,7 +20,7 @@ class Attributes(dict):
             super().__setitem__(key, '')
         else:
             super().__setitem__(key, value)
-        
+
     def __getitem__(self, key):
         key = key.lower()
         if key == 'class':
@@ -30,13 +30,16 @@ class Attributes(dict):
         else:
             return super().__getitem__(key)
 
-    def is_empty(self) -> bool: return self.classes.is_empty and self.styles.is_empty and len(self) <= 0
+    def is_empty(self) -> bool:
+        return self.classes.is_empty and self.styles.is_empty and len(self) <= 0
 
     @property
-    def classes(self): return self._classes
+    def classes(self):
+        return self._classes
 
     @property
-    def styles(self): return self._styles
+    def styles(self):
+        return self._styles
 
     def __str__(self):
         if len(self.classes) > 0:
@@ -45,4 +48,9 @@ class Attributes(dict):
             super().__setitem__('style', self.styles.output())
         return ''.join(f" {n}=\"{v}\"" for n, v in self.items())
 
-    def output(self) -> str: return self.__str__()
+    def add(self, name: str, value: str):
+        if name:
+            self[name] = value
+
+    def output(self) -> str:
+        return self.__str__()

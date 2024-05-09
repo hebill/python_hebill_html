@@ -23,7 +23,7 @@ def main():
 
     # 创建HTTP服务器对象，并指定请求处理程序
     server = HTTPServer((host, port), MyHandler)
-    print(f"Server started on {host}:{port}")
+    print(f"Server started on http://{host}:{port}")
 
     try:
         # 启动服务器，一直运行直到手动停止或程序异常退出
