@@ -2,16 +2,19 @@ from hebill_html import Document
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 doc = Document()
+
+alert = doc.html.body.middle.create.component.alert('你好！')
+alert.color.set_danger()
+
 table = doc.html.body.middle.create.component.table()
-table.color.set_success()
 table.set_bordered()
-table.set_hover()
 
 table.head.add_row(['ID', '姓名', '年龄', '职位'])
 
-table.body.add_row(['1', '张三', '18', '总监']).set_active()
+table.body.add_row(['1', '张三', '18', '总监'])
 table.body.add_row(['2', '李四', '18', '总监'])
 table.body.add_row(['3', '王二', '18', '总监'])
+
 table.body.add_row(['4', '麻一', '18', '总监'])
 
 

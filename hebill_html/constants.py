@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 NAME = 'hebill_html'
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 DESCRIPTION = 'python生成HTML代码'
 LONG_DESCRIPTION = 'README.MD'
 LONG_DESCRIPTION_TYPE = 'text/markdown'
